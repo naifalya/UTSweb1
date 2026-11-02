@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking - Pustaka Kita</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <header class="kepala">
+    <div class="kepala-isi">
+      <a class="merek" href="dashboard.html"><img src="assets/logo.png" alt=""> Pustaka Kita</a>
+      <nav aria-label="Menu utama">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html">Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html" aria-current="page">Tracking</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><button type="button" id="btnLogout" class="tombol tombol-kecil">Keluar</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="judulTracking">
+      <p class="kicker">Pengiriman</p>
+      <h1 id="judulTracking">Lacak pesanan</h1>
+
+      <form id="formTracking" class="lembar baris-cari" novalidate>
+        <div>
+          <label for="noDO">Nomor Delivery Order</label>
+          <input type="text" id="noDO" name="noDO" placeholder="mis. 20230012">
+        </div>
+        <button type="submit" class="tombol tombol-utama">Cari</button>
+        <p id="pesanTracking" class="pesan" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Hasil pencarian -->
+    <section id="hasilTracking" class="sembunyi surat-jalan" aria-labelledby="judulHasil">
+      <div class="surat-atas">
+        <div>
+          <p class="kicker">Atas nama</p>
+          <h2 id="judulHasil"><span id="tNama">Nama pemesan</span></h2>
+          <p class="mono">DO <span id="tNomor"></span></p>
+        </div>
+        <p class="stempel" id="statusTeks"></p>
+      </div>
+
+      <div class="progres" role="progressbar" aria-label="Progres pengiriman" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="bar"></div>
+      </div>
+      <ol id="langkah" class="langkah"></ol>
+
+      <div class="tabel-bungkus">
+        <table class="tabel-detail">
+          <caption>Detail pengiriman</caption>
+          <tbody>
+            <tr><th scope="row">Ekspedisi</th><td id="tEkspedisi"></td></tr>
+            <tr><th scope="row">Tanggal kirim</th><td id="tTanggal"></td></tr>
+            <tr><th scope="row">Jenis paket</th><td id="tPaket"></td></tr>
+            <tr><th scope="row">Total pembayaran</th><td id="tTotal"></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="judul-bagian">Perjalanan paket</h3>
+      <ol id="perjalanan" class="garis-waktu"></ol>
+    </section>
+  </main>
+
+  <footer class="kaki">
+    <p>&copy; 2026 Pustaka Kita &middot; UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

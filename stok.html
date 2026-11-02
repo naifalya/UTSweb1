@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stok Buku - Pustaka Kita</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <header class="kepala">
+    <div class="kepala-isi">
+      <a class="merek" href="dashboard.html"><img src="assets/logo.png" alt=""> Pustaka Kita</a>
+      <nav aria-label="Menu utama">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html" aria-current="page">Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><button type="button" id="btnLogout" class="tombol tombol-kecil">Keluar</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="judulKatalog">
+      <p class="kicker">Katalog</p>
+      <h1 id="judulKatalog">Informasi Stok</h1>
+
+      <div class="lembar">
+        <label for="cariStok">Cari kode atau judul buku</label>
+        <input type="search" id="cariStok" placeholder="mis. manajemen">
+
+        <div class="tabel-bungkus">
+          <table>
+            <caption>Stok di bawah 10 ditandai merah</caption>
+            <thead>
+              <tr><th scope="col">Sampul</th><th scope="col">Kode</th><th scope="col">Nama Barang</th><th scope="col">Jenis</th><th scope="col">Edisi</th><th scope="col">Harga</th><th scope="col">Stok</th></tr>
+            </thead>
+            <tbody id="isiStok"></tbody>
+            <tfoot>
+              <tr><td colspan="2">Total</td><td colspan="4"><span id="totalJudul">0</span> judul</td><td id="totalStok">0</td></tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <button type="button" id="resetKatalog" class="tombol tombol-kecil">Kembalikan data awal</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="judulTambah">
+      <h2 id="judulTambah" class="judul-bagian">Tambah stok baru</h2>
+      <form id="formStok" class="lembar" novalidate>
+        <div class="kolom">
+          <div><label for="kode">Kode buku</label><input type="text" id="kode" name="kode" placeholder="ASIP4302"></div>
+          <div><label for="judul">Nama barang</label><input type="text" id="judul" name="judul"></div>
+          <div>
+            <label for="kategori">Jenis barang</label>
+            <select id="kategori" name="kategori">
+              <option value="">-- pilih --</option>
+              <option>Buku Ajar</option>
+              <option>Modul</option>
+              <option>Buku Referensi</option>
+            </select>
+          </div>
+          <div><label for="edisi">Edisi</label><input type="number" id="edisi" name="edisi" min="1"></div>
+          <div><label for="harga">Harga (Rp)</label><input type="number" id="harga" name="harga" min="1"></div>
+          <div><label for="stok">Stok</label><input type="number" id="stok" name="stok" min="0"></div>
+        </div>
+        <p id="pesanStok" class="pesan" aria-live="polite"></p>
+        <button type="submit" class="tombol tombol-utama">Tambah ke tabel</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="kaki">
+    <p>&copy; 2026 Pustaka Kita &middot; UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

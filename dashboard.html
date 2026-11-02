@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Pustaka Kita</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- CSS internal -->
+  <style>
+    .sapaan { padding: 16px 0 30px; }
+    .sapaan .tanggal { font-family: "Courier New", monospace; font-size: 14px; color: #5d6b75; margin-bottom: 8px; }
+    .sapaan h1 { font-size: 52px; }
+    .ringkasan { display: flex; flex-wrap: wrap; gap: 12px 40px; margin: 24px 0; padding: 14px 0; border-top: 1px solid #2b353e; border-bottom: 1px solid #2b353e; }
+    .ringkasan dt { font-size: 14px; color: #5d6b75; }
+    .ringkasan dd { font-family: Georgia, serif; font-weight: bold; font-size: 30px; }
+    @media (max-width: 520px) { .sapaan h1 { font-size: 36px; } }
+  </style>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <header class="kepala">
+    <div class="kepala-isi">
+      <a class="merek" href="dashboard.html"><img src="assets/logo.png" alt=""> Pustaka Kita</a>
+      <nav aria-label="Menu utama">
+        <ul>
+          <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+          <li><a href="stok.html">Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><button type="button" id="btnLogout" class="tombol tombol-kecil">Keluar</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="sapaan" aria-labelledby="greeting">
+      <p class="tanggal" id="tanggal"></p>
+      <h1 id="greeting">Selamat datang</h1>
+
+      <dl class="ringkasan">
+        <div><dt>Judul buku</dt><dd id="angkaJudul">0</dd></div>
+        <div><dt>Total stok</dt><dd id="angkaStok">0</dd></div>
+        <div><dt>Pesanan tercatat</dt><dd id="angkaPesanan">0</dd></div>
+      </dl>
+
+      <a class="tombol tombol-utama" href="checkout.html">Buat pesanan baru</a>
+    </section>
+
+    <section aria-labelledby="judulMenu">
+      <h2 id="judulMenu" class="judul-bagian">Daftar isi</h2>
+      <ol class="daftar-isi">
+        <li>
+          <a href="stok.html">
+            <span class="no">01</span>
+            <span class="nama">Informasi Stok / Katalog</span>
+            <span class="ket">Lihat buku yang tersedia, tambah stok baru</span>
+            <span class="panah" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="tracking.html">
+            <span class="no">02</span>
+            <span class="nama">Tracking Pengiriman</span>
+            <span class="ket">Lacak pesanan dengan nomor Delivery Order</span>
+            <span class="panah" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="riwayat.html#laporan">
+            <span class="no">03</span>
+            <span class="nama">Laporan Pemesanan</span>
+            <span class="ket">Ringkasan jumlah pesanan dan omzet</span>
+            <span class="panah" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="riwayat.html#history">
+            <span class="no">04</span>
+            <span class="nama">History Transaksi</span>
+            <span class="ket">Semua transaksi, yang terbaru di atas</span>
+            <span class="panah" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="kaki">
+    <p>&copy; 2026 Pustaka Kita &middot; UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>

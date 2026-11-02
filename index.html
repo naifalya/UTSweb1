@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk - Pustaka Kita</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <main class="login-wrap">
+
+    <!-- Sapaan dan Tumpukan sampul buku (dekorasi) -->
+    <aside class="sisi-buku">
+      <img class="logo-besar" src="assets/logo.png" alt="Logo Pustaka Kita">
+      <p class="merek-besar">Pustaka Kita</p>
+      <h1>Buku kuliah, <em>tinggal pesan.</em></h1>
+      <p class="pengantar">Cek stok, buat pesanan, lalu lacak kirimannya dari satu tempat.</p>
+
+      <div class="tumpukan">
+        <img src="img/kepemimpinan.jpg" alt="">
+        <img src="img/manajemen_keuangan.jpg" alt="">
+        <img src="img/mikrobiologi.jpg" alt="">
+        <img src="img/pengantar_komunikasi.jpg" alt="">
+      </div>
+    </aside>
+
+    <!-- Form login -->
+    <section class="kartu-login" aria-labelledby="judulLogin">
+      <h2 id="judulLogin">Masuk</h2>
+      <p class="catatan">Pakai email yang sudah terdaftar.</p>
+
+      <form id="formLogin" novalidate>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password">
+
+        <p id="pesanLogin" class="pesan" aria-live="polite"></p>
+        <button type="submit" class="tombol tombol-utama tombol-penuh">Login</button>
+      </form>
+
+      <div class="dua-tombol">
+        <button type="button" class="tombol" id="btnLupa">Lupa Password</button>
+        <button type="button" class="tombol" id="btnDaftar">Daftar</button>
+      </div>
+
+      <details class="akun-contoh" style="margin-top: 22px;">
+        <summary>Lihat akun contoh</summary>
+        <ul>
+          <li>rina@gmail.com / rina123</li>
+          <li>agus@gmail.com / agus123</li>
+          <li>siti@gmail.com / siti123 (Admin)</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <!-- modal: Lupa Password -->
+  <div class="modal sembunyi" id="modalLupa" role="dialog" aria-modal="true" aria-labelledby="judulLupa">
+    <div class="modal-isi">
+      <h2 id="judulLupa">Lupa Password</h2>
+      <p class="catatan">Masukkan email kamu, nanti dikirim tautan untuk reset.</p>
+      <form id="formLupa" novalidate>
+        <label for="emailLupa">Email terdaftar</label>
+        <input type="email" id="emailLupa" name="emailLupa">
+        <p id="pesanLupa" class="pesan" aria-live="polite"></p>
+        <div class="dua-tombol">
+          <button type="submit" class="tombol tombol-utama">Kirim Tautan</button>
+          <button type="button" class="tombol" id="tutupLupa">Tutup</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- modal: Daftar -->
+  <div class="modal sembunyi" id="modalDaftar" role="dialog" aria-modal="true" aria-labelledby="judulDaftar">
+    <div class="modal-isi">
+      <h2 id="judulDaftar">Daftar Akun</h2>
+      <form id="formDaftar" novalidate>
+        <label for="namaDaftar">Nama lengkap</label>
+        <input type="text" id="namaDaftar" name="namaDaftar">
+
+        <label for="emailDaftar">Email</label>
+        <input type="email" id="emailDaftar" name="emailDaftar">
+
+        <label for="passDaftar">Password (minimal 6 karakter)</label>
+        <input type="password" id="passDaftar" name="passDaftar">
+
+        <label for="passDaftar2">Ulangi password</label>
+        <input type="password" id="passDaftar2" name="passDaftar2">
+
+        <p id="pesanDaftar" class="pesan" aria-live="polite"></p>
+        <div class="dua-tombol">
+          <button type="submit" class="tombol tombol-utama">Daftar</button>
+          <button type="button" class="tombol" id="tutupDaftar">Tutup</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

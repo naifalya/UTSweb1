@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan dan History - Pustaka Kita</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <header class="kepala">
+    <div class="kepala-isi">
+      <a class="merek" href="dashboard.html"><img src="assets/logo.png" alt=""> Pustaka Kita</a>
+      <nav aria-label="Menu utama">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="stok.html">Stok</a></li>
+          <li><a href="checkout.html">Pemesanan</a></li>
+          <li><a href="tracking.html">Tracking</a></li>
+          <li><a href="riwayat.html" aria-current="page">Riwayat</a></li>
+          <li><button type="button" id="btnLogout" class="tombol tombol-kecil">Keluar</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="laporan" aria-labelledby="judulLaporan">
+      <p class="kicker">Laporan</p>
+      <h1 id="judulLaporan">Laporan pemesanan</h1>
+      <dl class="angka-besar">
+        <div><dt>Jumlah pesanan</dt><dd id="lapPesanan">0</dd></div>
+        <div><dt>Buku terjual</dt><dd id="lapItem">0</dd></div>
+        <div><dt>Total omzet</dt><dd id="lapOmzet">Rp0</dd></div>
+      </dl>
+    </section>
+
+    <section id="history" aria-labelledby="judulHistory">
+      <h2 id="judulHistory" class="judul-bagian">History transaksi</h2>
+      <div class="lembar">
+        <label for="filterStatus">Tampilkan status</label>
+        <select id="filterStatus" name="filterStatus">
+          <option value="semua">Semua</option>
+        </select>
+
+        <div class="tabel-bungkus">
+          <table>
+            <caption>Pesanan terbaru ada di paling atas</caption>
+            <thead>
+              <tr><th scope="col">No. DO</th><th scope="col">Tanggal</th><th scope="col">Pemesan</th><th scope="col">Buku</th><th scope="col">Total</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody id="isiRiwayat"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="kaki">
+    <p>&copy; 2026 Pustaka Kita &middot; UTS Pemrograman Web 1</p>
+  </footer>
+</body>
+</html>
