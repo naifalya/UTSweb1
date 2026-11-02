@@ -10,8 +10,6 @@ NIM: 312510193
 Kelas: I251B
 
 
-Link Video YouTube | [ISI LINK YOUTUBE] |
-
 ## Daftar Isi
 
 1. [Deskripsi Project](#1-deskripsi-project)
